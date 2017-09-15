@@ -1,0 +1,36 @@
+version: '2'
+services:
+  php-devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile.php-devenv
+    image: php-devenv
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mariadb
+    links:
+      - mariadb:mariadbhost
+  atuin-tools:
+    image: scalebox/atuin-gulp:v2
+    volumes:
+      - ./app:/workspace/app
+  mariadb:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpwd
+    volumes:
+      - dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8001:80"
+    depends_on:
+      - mariadb
+    links:
+      - mariadb:db
+
+volumes:
+  dbdata:

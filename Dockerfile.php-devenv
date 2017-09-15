@@ -1,0 +1,7 @@
+FROM php:5.6-apache
+
+RUN a2enmod rewrite \
+	&& docker-php-ext-install mysqli mbstring \
+	&& docker-php-ext-enable mysqli mbstring
+
+# docker run -d -p 8000:80 --link mariadb:db -v "$PWD/app":/var/www/html phpdev
