@@ -1,6 +1,6 @@
 <?php
 $version = array(0, 0, 1);
-$varsion_date = array(14, 9, 2017);
+$varsion_date = array(15, 9, 2017);
 
 $version_string = sprintf(
     "%s.%s.%s",

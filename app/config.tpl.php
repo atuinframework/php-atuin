@@ -63,5 +63,3 @@ $DB_CONNECTION_PARAMS = array(
 	"port" => 3306,
 	"database" => "db_name"
 );
-
-?>

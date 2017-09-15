@@ -3,14 +3,11 @@ define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 
 $error_config_file_missing = <<<EOT
 		<h2>ATUIN ERROR</h2>
-		<h4>ATUIN ERRORConfiguration file is missing.</h4>
+		<h4>Configuration file is missing.</h4>
 		<p>
 			Please create the file <code>app/config.php</code> starting from the
 			file <code>app/config.tpl.php</code>.
 		</p>
-		<p>
-           More info in the README file and documentation.
-        </p>
 EOT;
 
 /* import configs */
